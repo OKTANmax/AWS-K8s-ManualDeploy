@@ -1,0 +1,21 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: webapp
+    labels:
+      app: prod
+  spec: # Deployment Specs
+    replicas: 8 # Number of Pods
+    selector:
+      matchLabels:
+        app: prod # Label to select
+    template: # Contains Container info.
+      metadata:
+        labels:
+          app: prod # label of each pod
+      spec: # Pod Specs
+        containers:
+          - name: web-server
+            image: nginx # Container Image
+            ports:
+              - containerPort: 80 # Container Port base on Application required port.
