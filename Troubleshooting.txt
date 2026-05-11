@@ -17,4 +17,5 @@ Issue: The Application Load Balancer (ALB) reported targets as "Unhealthy" (flap
 
 Analysis: The overly restrictive "Least Privilege" rules in the Security Groups were inadvertently blocking essential Kubelet-to-API and Pod-to-Pod control plane traffic required by the CNI.
 
-Resolution: Refined the security architecture to allow all traffic between the Control Plane and Worker Node Security Groups. By using Security Group Referencing (rather than CIDR blocks), I maintained a hardened posture while ensuring seamless, unrestricted communication across the cluster's internal fabric.
+Resolution: Refined the security architecture to allow all traffic between the Control Plane and Worker Node Security Groups. 
+By using Security Group Referencing (rather than CIDR blocks), I maintained a hardened posture while ensuring seamless, unrestricted communication across the cluster's internal fabric.
