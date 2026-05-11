@@ -2,7 +2,8 @@ Challenges & Troubleshooting
 1. Remote Access to Isolated Instances
 Issue: Unable to establish SSH connectivity to EC2 instances due to their placement within Private Subnets (as per security hardening best practices).
 
-Resolution: Instead of using a Bastion Host or opening SSH ports, I implemented AWS Systems Manager (SSM) Session Manager. This was achieved by attaching the necessary IAM policies to the instance profiles, allowing secure, browser-based shell access without exposing public IP addresses or managing SSH keys.
+Resolution: Instead of using a Bastion Host or opening SSH ports, I implemented AWS Systems Manager (SSM) Session Manager. 
+This was achieved by attaching the necessary IAM policies to the instance profiles, allowing secure, browser-based shell access without exposing public IP addresses or managing SSH keys.
 
 2. SSM Agent Connectivity Failures
 Issue: Despite correct IAM roles and Security Group configurations, the SSM agent remained unreachable, preventing remote management.
